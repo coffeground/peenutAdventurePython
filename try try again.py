@@ -100,10 +100,19 @@ How will you respond?
     print(""""Sacabambaspis like myself are fairly common in the land of Placeholder. I am Bob, your guide in these lands. 
 You were trying to find a legnedary artifact by the name of 'The Holy Beans of Linus' when a stray bird bonked you in the head.
 Do you remember anything about yourself?"
-What's your name?""")
+What is your name?""")
     print("(Names can not be blank and have a limit of 40 characters.)")
     while(True):
         name = input("Enter character name: ")
+        if name.upper() == ("YES"):
+            print("Your name is 'What'? [Y/N]")
+            if playerY() == 0:
+                print("Thank you.")
+                continue
+            else:
+                print("Weird name, but okay.")
+                break
+        
         temp = sum(not chr.isspace() for chr in name)
         if temp > 40:
             print("Please enter a  name shorter than 40 characters.")
@@ -115,7 +124,7 @@ What's your name?""")
             continue
         else:
             break
-    print("Hi,",name+". I'm the narrator, but feel free to call me Sus.\n")
+    print("Hi,",name+". I'm the narrator, but feel free to call me Sus.\n I'll leave you two alone for now.\n")
 
 #    playsound('https://youtu.be/YOuMxmzmxqk')
         
