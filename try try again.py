@@ -39,6 +39,8 @@ input()
 
 #######
 
+def fight():
+
 def playerChoose(lastOption): #choose between 1 and unspecified last option, returns option number, asks again when entered anything else
     while(True):
         try:
@@ -53,7 +55,7 @@ def playerChoose(lastOption): #choose between 1 and unspecified last option, ret
 
 def playerY(): #asks player for yes or no, returns 1 if string contains 'y', 0 if it contains 'n', tries again if it contains both
     while(True): #its stupid but i dont know about any edge cases that cause problems so ill pretend they dont exist
-        temp = input()
+        temp = input("[Y/N] ")
         if "Y" in temp.upper():
             if "N" in temp.upper():
                 print("Please enter a valid value: Y or N")
@@ -88,26 +90,24 @@ whatthefuck.jpeg
 
 >Satisfied with your inner monologue, you turn to the discount Paimon.
 "Hey, you. You’re finally awake. You were trying to cross the border, right? Walked right into that Imperial ambush, same as us, and that thief over there."
-
+>You don't see anyone in your vicinity that the fish could be referring to. You look back at the thing.
 >Its derpy face portrays no emotions, though its foot long body slowly bobs up and down in the air. Probably magic.
->You don't see anyone in your vicinity that the fish could be referring to. Maybe it's schizophrenic.
 How will you respond?
     'Who are you?' [1]
     'What are you?' [2]""")
 
     input()
 
-    print(""""Sacabambaspis like myself are fairly common in the land of Placeholder. I am Bob, your guide in these lands. 
-You were trying to find a legnedary artifact by the name of 'The Holy Beans of Linus' when a stray bird bonked you in the head.
+    print(""""Sacabambaspis like myself are fairly common in the land of Placeholder. I am Bob, your guide in these lands.
 Do you remember anything about yourself?"
 What is your name?""")
-    print("(Names can not be blank and have a limit of 40 characters.)")
-    while(True):
+    
+    while(True): #silly easter egg
         name = input("Enter character name: ")
         if name.upper() == ("YES"):
-            print("Your name is 'What'? [Y/N]")
+            print("Your name is 'What'?")
             if playerY() == 0:
-                print("Thank you.")
+                print("I can see why.")
                 continue
             else:
                 print("Weird name, but okay.")
@@ -119,30 +119,29 @@ What is your name?""")
         elif temp < 1:
             print("Names cannot be blank.")
             continue
-        print("Your name is",name+"? Are you sure? [Y/N]")
+        print("Your name is",name+"? Are you sure?")
         if playerY() == 0:
             continue
         else:
             break
-    print("Hi,",name+". I'm the narrator, but feel free to call me Sus.\n I'll leave you two alone for now.\n")
+    
+    print(""""It seems you have not lost all of your memory. You were knocked unconscious when a flock of geese ganged up on you.
+    I tried to fend them off, but it seems they're coming back to finish the job. Look out!"
+    (This is the fighting tutorial. Do you want to learn how to fight? This won't affect the story.")""")
+
+    if playerY() == 0:
+        print("You won or something! Congratulations on beating up some birds. You got placeholder XP!")
+    else:
+        fight()
+
+
+
+
+
+
+
 
 #    playsound('https://youtu.be/YOuMxmzmxqk')
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         
 game()
 
