@@ -1,5 +1,10 @@
 import playsound
+from enum import Enum
+import sys
+import time
 
+#Resources:
+#https://codereview.stackexchange.com/questions/237601/simple-python-turn-based-battle-game
 
 print("""
 \\\\\\\\\\\\\\\\\\\\
@@ -8,22 +13,35 @@ shitty game v0.1 No copyright @ your mother 2023
 where did you even get this
 
 -------
-Disclaimer: Game dialogue can be mildly offensive and includes cuss words. By playing this game, you accept that you have fully read the Terms and Conditions of using this software.
--------
+Disclaimer: Game dialogue can be mildly offensive to some players and includes curse words. 
+By continuing to play this game, you accept that you will not complain about getting offended by anything in it.
+Type in 'ACCEPT' to start, or 'DECLINE' to close the game.
+-------""")
 
-This is a text-based game. You mostly type in numbers that correspond to the options on the screen.
-You can examine your inventory and items in it by typing "INV" and "INSPECT" respectively.
+while(True):
+    temp = upper(input())
+    if temp == "ACCEPT":
+        break
+    elif temp == "DECLINE":
+        print("Okay. The program will exit in 10 seconds.")
+        time.sleep(10)
+        sys.exit()
+        break
+    else:
+        print("Please type either 'ACCEPT' or 'DECLINE'.")
+        continue
+
+print(""" This is a text-based game. You type in things the game tells you to.
 
 Objects of interest are mostly surrounded in straight brackets: "[]"
-Options that are enclosed in curly brackets "{}" advance the story, and you cannot go back after selecting them.
 
 Example:
     Blah blah blah
     Option 1 [1]
     Option 2 [2]
-    {Option 3} [3]
+    Option 3 [3]
 
-In this situation, you are free to choose from 1 to 3, though it is recommended that you try both 1 and 2 before proceeding.
+In this situation, you are free to choose from 1 to 3. Type in the selected number: enter '2' without the quotation marks, for example.
 (Putting in a + or - sign returns an error.)
 
 I hope you understand, but if you don't there's no function to see this text again unless you restart the entire game.
@@ -39,7 +57,7 @@ input()
 
 #######
 
-def fight():
+class chr()
 
 def playerChoose(lastOption): #choose between 1 and unspecified last option, returns option number, asks again when entered anything else
     while(True):
@@ -50,7 +68,7 @@ def playerChoose(lastOption): #choose between 1 and unspecified last option, ret
             else:
                 continue
         except:
-            print("Please enter a number between 1 and",lastOption,".")
+            print("Please enter a number between 1 and "+lastOption+".")
             continue
 
 def playerY(): #asks player for yes or no, returns 1 if string contains 'y', 0 if it contains 'n', tries again if it contains both
@@ -80,17 +98,17 @@ def game():
 
 >There's a fish floating in your peripheral vision. 
 whatthefuck.jpeg 
->You ignore it for now and inspect your surroundings.
+>Probably not a threat. You ignore it for now and inspect your surroundings.
 >You're in a field of wheat. There's nothing of note for miles.
 >Your leather pack is lying next to you on the ground. It probably came with you when whatever force transported you here.
 >You turn your gaze to yourself.
 >As far as you can tell, you don't have any injuries.
 >You have a mint green sweater and some dark blue trousers on.
->The ground around you is a bit dry, so they aren't too dirty. You brush off some dust.
+
 
 >Satisfied with your inner monologue, you turn to the discount Paimon.
-"Hey, you. You’re finally awake. You were trying to cross the border, right? Walked right into that Imperial ambush, same as us, and that thief over there."
->You don't see anyone in your vicinity that the fish could be referring to. You look back at the thing.
+>"Hey, you. You’re finally awake. You were trying to cross the border, right? Walked right into that Imperial ambush, same as us, and that thief over there."
+>You're sure it was quoting something, but you're not sure. You examine the fish fo
 >Its derpy face portrays no emotions, though its foot long body slowly bobs up and down in the air. Probably magic.
 How will you respond?
     'Who are you?' [1]
@@ -98,9 +116,8 @@ How will you respond?
 
     input()
 
-    print(""""Sacabambaspis like myself are fairly common in the land of Placeholder. I am Bob, your guide in these lands.
-Do you remember anything about yourself?"
-What is your name?""")
+    print(""">"I'm Bob, the guide you hired when travelling in the land of Placeholder.
+Do you remember anything about yourself? What's your name?"""")
     
     while(True): #silly easter egg
         name = input("Enter character name: ")
@@ -125,8 +142,13 @@ What is your name?""")
         else:
             break
     
-    print(""""It seems you have not lost all of your memory. You were knocked unconscious when a flock of geese ganged up on you.
-    I tried to fend them off, but it seems they're coming back to finish the job. Look out!"
+    print(""">"Okay, "+name+". I'm glad to see you back. We were going to a town named Placeholder when we got attacked by a flock of geese. 
+We're currently about 
+>The grass around you is a bit dry, so they aren't too dirty. You brush off some dust.
+
+
+
+
     (This is the fighting tutorial. Do you want to learn how to fight? This won't affect the story.")""")
 
     if playerY() == 0:
