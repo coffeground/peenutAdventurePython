@@ -1,0 +1,32 @@
+from enum import Enum
+import sys
+import time
+import tkinter as tk
+
+#Making functions for PeenutAdventure
+
+while(True):
+    temp = input().upper()
+    if temp == "A":
+        break
+    elif temp == "D":
+        print("Okay. The program will exit in 10 seconds.")
+        time.sleep(10)
+        sys.exit()
+        break
+    else:
+        print("Please type either 'A' or 'D'.")
+        continue
+
+
+
+
+#def inventory():
+
+window = tk.Tk()
+
+label = tk.Label(
+    text="Hello, Tkinter")
+
+label.pack()
+window.mainloop()
