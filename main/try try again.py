@@ -1,5 +1,6 @@
 #Resources:
 #https://codereview.stackexchange.com/questions/237601/simple-python-turn-based-battle-game
+#https://stackoverflow.com/questions/63534191/developing-a-turn-based-battle-game
 #from playsound import playsound
 
 from enum import Enum
@@ -27,16 +28,16 @@ def playerY(): #asks player for yes or no, returns 1 if string contains 'y', 0 i
     while(True): #its stupid but i dont know about any edge cases that cause problems so ill pretend they dont exist
         temp = input("[Y/N] ")
         if "Y" in temp.upper():
-            if "N" in temp.upper():
+            if "N" in temp.upper(): #contains Y and not N
                 print("Please enter a valid value: Y or N")
                 continue
             return 1
         elif "N" in temp.upper():
-            if "Y" in temp.upper():
+            if "Y" in temp.upper(): #contains N and not Y
                 print("Please enter a valid value: Y or N")
                 continue
             return 0
-        else:
+        else: #either both or neither n or y
             print("Please enter a valid value: Y or N")
             continue
 
@@ -58,7 +59,7 @@ where did you even get this
 -------
 Disclaimer: Game dialogue can be mildly offensive to some players and includes curse words. 
 By continuing to play this game, you accept that you will not complain about getting offended by anything in it.
-Type in 'A' to accept and start, or 'D' to decline and close the game.
+Type in either (A)ccept to start or (D)ecline to automatically exit.
 -------""")
 
 #see nut for disclaimer code DO NOT FORGET DEBUG PURPOSES ONLY {UNCOMMENT}
@@ -168,7 +169,12 @@ Do you remember anything about yourself? What's your name?"''')
     print('''>You walk to your bag and inspect your [Inventory].
 (There should be a new window popping up right about now.)''')
     #inventory()
-    
+    print('''>Bob swims down(?) to inspect the items you have in there.
+>Health potions, some rations, and a dull sword. There should also be some starter crafting materials, but the crafting system hasn't been coded yet.
+>You equip the Dull Blade.
+
+
+''')
 
 
 
@@ -178,8 +184,8 @@ Do you remember anything about yourself? What's your name?"''')
     if playerY() == 0:
         print("You won or something! Congratulations on beating up some birds. You got placeholder XP!")
 
-    print('''>After a short break, you and your trusty sea creature set off on an uneventful journey to Dublin, a fairly small town in the middle of bumfuck nowhere.
->You la
+    print('''>After a short break, you and your trusty sea creature companion set off on an uneventful journey to your destination in the middle of bumfuck nowhere.
+>You
           
           
           

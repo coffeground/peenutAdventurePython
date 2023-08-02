@@ -1,0 +1,55 @@
+from tkinter import *
+import requests 
+
+itemsheet = pd.read
+
+class intitem(object):
+    def __init__(self, type, num, atk, heal, ac, price):
+        #type includes (A)rmor, (W)eapon and (H)ealing
+        self.type = type
+        #Internal ID number of item, should increment by 1 like block ids in old minecraft
+        self.num = num
+        #item attack. If not weapon, this should be 0
+        self.atk = atk
+        #Health gained from using this item
+        self.heal = heal
+        #Armor class. uhhhhhh idk brain not working maybe either +spd or seperate block%.
+        #D&D 5e says block if enemy rolls lower than your AC.
+        self.ac = ac
+        self.price = price
+
+class exitem(object):
+    def __init__(self, num, name, desc):
+        self.num = num #internal ID. Should be the same as num in intitem() file
+        self.name = name #Get this from file. Not implemented yet as of 2/8/23
+        self.desc = desc #Lore/description. Sole purpose of seperating internal and external item classes; too fucking long.
+
+class Inventory(object):    
+    def __init__(self):
+        self.items = {}
+
+    def add_item(self, item):
+        self.items[item.name] = item
+
+    def print_items(self):
+        print('\t'.join(['Name', 'Atk', 'Arm', 'Lb', 'Val']))
+        for item in self.items.values():
+            print('\t'.join([str(x) for x in [item.name, item.attack, item.armor, item.weight, item.price]]))
+
+
+
+window = Tk()
+window.geometry("220x100")
+window.title('Inventory')
+stats = StringVar()
+items = StringVar()
+stats.set("shit")
+items.set("cum")
+
+charstats = Label(window, textvariable=stats)
+charitems = Label(window, textvariable=items)
+
+charstats.pack()
+charitems.pack()
+
+window.mainloop()

@@ -1,7 +1,7 @@
 from enum import Enum
 import sys
 import time
-import tkinter as tk
+from tkinter import *
 
 #Making functions for PeenutAdventure
 
@@ -18,15 +18,18 @@ while(True):
         print("Please type either 'A' or 'D'.")
         continue
 
-
-
-
 #def inventory():
 
-window = tk.Tk()
+window = Tk()
+window.geometry("220x100")
+shit = StringVar()
+cum = StringVar()
+shit.set("shit")
+cum.set("cum")
 
-label = tk.Label(
-    text="Hello, Tkinter")
+table = Label(window, textvariable=shit)
+able = Label
 
-label.pack()
+
 window.mainloop()
+
