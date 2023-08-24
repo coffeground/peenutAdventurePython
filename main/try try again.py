@@ -102,6 +102,8 @@ Good luck, i guess.
 def game():
 
     #print(">You're an adventurer unknown to these lands. You came to find a artifact that is not coded in this version of the game. ")
+
+    print('///ACT 1: AWAKENING///\n')
     
     dly()
     print('>You wake up.\n>This isn\'t your bed.')
@@ -110,13 +112,13 @@ def game():
     dly()
     print('whatthefuck.jpeg ')
     dly()
-    print('''>"Hey, you. You’re finally awake. You were trying to cross the border, right? Walked right into that ambush."''')
+    print('''>"Hey, you. You’re finally awake. Do you remember me?"''')
     time.sleep(4)
     print('''>Probably not a threat.
 >You decide to ignore it for now and inspect your surroundings.
->Your enchanted pack is lying next to you on the ground.
+>Your enchanted pack of holding is lying next to you on the ground.
 >You turn your gaze to yourself.
->You have a mint green hoodie and some dark blue trousers on. You're a bit hurt, but there are some bandages on your visible wounds.''')
+>You have a mint green hoodie and some dark blue trousers on. You're a bit roughed up, but there are some bandages on your wounds.''')
     time.sleep(4)
     print('''
 >Satisfied with your inner monologue, you turn to the discount Paimon.
@@ -157,17 +159,20 @@ Do you remember anything about yourself? What's your name?"''')
     
     print('"I\'m '+name+'," you respond.\n>"It seems you\'ve retained some of your memory. That\'s good."') 
     dly() #i'm so sorry whoever reads this code
-    print('>"I\'m Bob, the Sacabambaspis guide you hired when you came to Placeholder. We were travelling to a small town named Dublin when we got attacked by a flock of geese."') 
-    print('''>"We\'re currently about 50 kilometers from any people, so I had to make do with the first aid we packed."
+    print('>"I\'m Bob, the Sacabambaspis guide you hired when you came to Placeholder. We were travelling when we got attacked by some geese."') 
+    print('''>"We\'re far from any help, so I had to make do with the first aid we packed."
 >You stand up and brush yourself off. The barren landscape here is a bit dry, so there's quite a bit of dust on you.''')
     print('>You notice Bob air-swimming around your leather backpack.')
     dly()
     print('>"I was barely able to chase the birds off last time without your help, so they\'re probably coming back for more.\nCould you lend me a hand this time?"')
     ldly()
-    print('"Sure."')
+    if playerY() == 1:
+        continue
+    else:
+
     dly()
     print('''>You walk to your bag and inspect your [Inventory].
-(There should be a new window popping up right about now.)''')
+(There should be a new window popping up right about now, but I haven't coded it yet.)''')
     #inventory()
     print('''>Bob swims down(?) to inspect the items you have in there.
 >Health potions, some rations, and a dull sword. There should also be some starter crafting materials, but the crafting system hasn't been coded yet.
@@ -181,24 +186,30 @@ Do you remember anything about yourself? What's your name?"''')
 
    # (This is the fighting tutorial. Do you want to learn how to fight? This won't affect the story.")''')
 
-    if playerY() == 0:
-        print("You won or something! Congratulations on beating up some birds. You got placeholder XP!")
+    ldly()
+    print('You fight. Though you got some bruises, you won and chased the birds off! (I am too lazy to implement combat right now.)')
 
     print('''>After a short break, you and your trusty sea creature companion set off on an uneventful journey to your destination in the middle of bumfuck nowhere.
->You
+>Some days pass by while you converse on the road, Bob recapping the events that led you both here.
+>You learn you were trying to find a 'Lunar Totem' in the outer regions of the continent for its large bounty.
+>You had heard of some alleged sightings out here, so you went on a quest with your guard and now drinking companion Bob.
+>He said other things about your past, but I won't elaborate because the exposition is thankfully over.''')
+          
+    ldly()
+    print('One night in your bedroll, you\'re shook awake by your floating friend.')
+print('>"We might have a problem,',name+'. The sun isn\'t up."')
+print('    \'What do you mean?\' [1]')
+
+          
+          
+         
           
           
           
           
           
           
-          
-          
-          
-          
-          
-''')
-        
+
 
 
 
